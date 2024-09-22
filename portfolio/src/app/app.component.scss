@@ -17,6 +17,22 @@
   .form-control::placeholder{
     color:#6c757d;
   }
+
+  .my-btn{
+    border-top: 1px solid gray;
+    a{
+      text-decoration: none;
+    }
+    :first-child{
+      border-right: 1px solid gray;
+    }
+  }
+
+  .profile-icon{
+    a{
+      border: 1px solid gray;
+    }
+  }
   
   #spinner {
     opacity: 0;
