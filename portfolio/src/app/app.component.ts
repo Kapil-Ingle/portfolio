@@ -28,20 +28,19 @@ export class AppComponent {
   }
 
   sendEmail(){
+    console.log(this.contactUsForm);
     if(this.contactUsForm.invalid){
       this.contactUsForm.markAllAsTouched();
+    }else{
+      emailjs.init('wngNXdrFevTVPM5GC');
+      emailjs.send("service_s4y2okb","template_mvkrx3b",{
+        from_name: this.contactUsForm.get('name')?.value,
+        to_name: "Kapil",
+        email: this.contactUsForm.get('email')?.value,
+        subject: this.contactUsForm.get('subject')?.value,
+        message: this.contactUsForm.get('msg')?.value,
+        });
     }
-    console.log(this.contactUsForm);
-
-    // emailjs.init('wngNXdrFevTVPM5GC');
-    
-    // emailjs.send("service_s4y2okb","template_mvkrx3b",{
-    //   from_name: this.contactUsForm.get('name')?.value,
-    //   to_name: "Kapil",
-    //   email: this.contactUsForm.get('email')?.value,
-    //   subject: this.contactUsForm.get('subject')?.value,
-    //   message: this.contactUsForm.get('msg')?.value,
-    //   });
   }
 
   downloadResume(){
