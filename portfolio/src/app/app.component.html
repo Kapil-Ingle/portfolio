@@ -14,15 +14,14 @@
         <img class="w-100 img-fluid mb-4" src="assets/profile1.png" alt="Image">
         <h1 class="text-success mt-2">Kapil Ingle</h1>
         <div class="mb-4" style="height: 22px;">
-          <h4 class="typed-text-output d-inline-block text-light"></h4>
-          <div class="typed-text d-none">Angular Developer, Software Developer, Front End Developer
-          </div>
+          <h4 class="typed-text-output d-inline-block text-light typed-element"></h4>
+          <div class="typed-text d-none"></div>
         </div>
-        <div class="d-flex justify-content-center mt-auto mb-3 profile-icon">
-          <a class="btn my-secondary btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
-          <a class="btn my-secondary btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-          <a class="btn my-secondary btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a class="btn my-secondary btn-square mx-1" href="#"><i class="fab fa-instagram"></i></a>
+        <div class="d-flex justify-content-center mt-auto mb-3">
+          <a class="btn btn-dark btn-square mx-1" target="_blank" href="#"><i class="fab fa-github"></i></a>
+          <a class="btn btn-dark btn-square mx-1" target="_blank" href="https://www.linkedin.com/in/kapil-ingle-9470202b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+          <a class="btn btn-dark btn-square mx-1" target="_blank" href="https://www.facebook.com/kapil.ingle.52?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+          <a class="btn btn-dark btn-square mx-1" target="_blank" href="https://www.instagram.com/kapil_ingle_146?igsh=MWtqcHExdHM3NXc1OA=="><i class="fab fa-instagram"></i></a>
         </div>
         <div class="d-flex align-items-end justify-content-between my-btn">
           <a href="" class="text-light w-50 shadow-lg text py-2" (click)="downloadResume()">Download CV</a>
@@ -397,10 +396,10 @@
                 <input type="email" class="form-control border-0 my-secondary text-white" id="email" placeholder="Your Email"formControlName="email">
                 <label for="email">Your Email</label>
               </div>
-              @if(contactUsForm.controls['email']?.hasError('required') && contactUsForm.controls['name'].touched){
+              @if(contactUsForm.controls['email'].hasError('required') && contactUsForm.controls['name'].touched){
                 <small class="ms-3 text-danger">Please enter your email</small>
               }
-              @if(contactUsForm.controls['email']?.hasError('email') && contactUsForm.controls['name'].touched){
+              @if(contactUsForm.controls['email'].hasError('email') && contactUsForm.controls['name'].touched){
                 <small class="ms-3 text-danger">Please enter valid email</small>
               }
             </div>
@@ -435,10 +434,10 @@
       <section class="wow fadeIn" data-wow-delay="0.1s">
         <div class="my-secondary text-light text-center p-5">
           <div class="d-flex justify-content-center mb-4">
-            <a class="btn btn-dark btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
-            <a class="btn btn-dark btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-            <a class="btn btn-dark btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a class="btn btn-dark btn-square mx-1" href="#"><i class="fab fa-instagram"></i></a>
+            <a class="btn btn-dark btn-square mx-1"target="_blank" href="#"><i class="fab fa-github"></i></a>
+            <a class="btn btn-dark btn-square mx-1"target="_blank" href="https://www.linkedin.com/in/kapil-ingle-9470202b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+            <a class="btn btn-dark btn-square mx-1"target="_blank" href="https://www.facebook.com/kapil.ingle.52?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-dark btn-square mx-1" target="_blank" href="https://www.instagram.com/kapil_ingle_146?igsh=MWtqcHExdHM3NXc1OA=="><i class="fab fa-instagram"></i></a>
           </div>
           <div class="d-flex justify-content-center mb-3">
             <a class="text-light px-3 border-end" href="#">Privacy</a>

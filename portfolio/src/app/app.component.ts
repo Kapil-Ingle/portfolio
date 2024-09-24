@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import emailjs from '@emailjs/browser';
+import { ToastrService } from 'ngx-toastr';
+import Typed from 'typed.js';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +16,7 @@ export class AppComponent {
   title = 'portfolio';
   contactUsForm!: FormGroup;
 
-  constructor(private fb: FormBuilder){
+  constructor(private fb: FormBuilder, private toaster: ToastrService){
 
   }
 
@@ -26,6 +28,12 @@ export class AppComponent {
       msg: ['', [Validators.required]]
     })
   }
+  
+  ngAfterViewInit(){
+    this.startTypingEffect()
+
+  }
+
 
   sendEmail(){
     console.log(this.contactUsForm);
@@ -39,7 +47,8 @@ export class AppComponent {
         email: this.contactUsForm.get('email')?.value,
         subject: this.contactUsForm.get('subject')?.value,
         message: this.contactUsForm.get('msg')?.value,
-        });
+      });
+      this.showToast()
     }
   }
 
@@ -48,6 +57,26 @@ export class AppComponent {
     link.href = 'assets/resume.pdf';
     link.download = 'Kapil_Ingle_Resume.pdf';
     link.click();
+  }
+
+  showToast() {
+    this.toaster.success('Your message has been sent.', 'Thanks', {
+      positionClass: 'toast-top-right', // specific position for this toast
+      timeOut: 3000
+    });
+  }
+
+  startTypingEffect(){
+    if(typeof document !== 'undefined'){
+      const options = {
+      strings: ["Angular Developer", "Frontend Developer", "Software Engineer"],
+      typeSpeed: 100,         // Typing speed in milliseconds
+      backSpeed: 50,          // Backspacing speed
+      backDelay: 1500,        // Time before backspacing starts
+      loop: true              // Loop the typing effect
+    };
+    const typed = new Typed('.typed-element', options);
+    }
   }
 
   // End
